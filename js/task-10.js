@@ -14,13 +14,14 @@ function createBoxes(value) {
   let size = 30;
   for (let i = 0; i < value; i++) {
     const box = document.createElement("div");
-    boxes.append(box);
+    items[i] = box;
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     let color = getRandomHexColor();
     box.style.background = color;
     size = size + 10;
   }
+  boxes.append(...items);
 }
 
 create.addEventListener("click", () => {
